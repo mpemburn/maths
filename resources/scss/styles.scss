@@ -1,0 +1,111 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+canvas {
+    background-color: #ffffff;
+    display: block;
+}
+
+#inputs {
+    display: flex;
+    margin-top: 0.5rem;
+    font-style: italic;
+    font-family: serif;
+    gap: 10px;
+}
+.form-input {
+    max-width: 4vw;
+    text-align: center;
+    font-style: normal;
+    font-family: Arial, Helvetica, sans-serif;
+}
+@media (max-width: 600px) {
+    #inputs {
+        flex-direction: column;
+    }
+}
+#block {
+    margin: 5rem;
+}
+#outputBlock {
+    display: none;
+    margin-top: 0.5rem;
+}
+#resultsBlock, #formula {
+    font-size: 12pt;
+    position: relative;
+    top: -2vh;
+}
+#error {
+    padding-top: 0.5rem;
+}
+#math {
+    font-size: 1.5rem;
+}
+#canvas {
+    width: 100%;
+    max-width: 500px;
+    margin: 20px auto;
+}
+#xyCanvas {
+    border: 1px solid #eeeeee;
+    max-width: 100%;
+    height: auto; /* Keeps the aspect ratio intact if shrunk */
+}
+.padded {
+    padding-left: 3px;
+}
+.red-text, .a-value {
+    color: red;
+}
+.blue-text, .b-value {
+    color: blue;
+}
+.green-text, .c-value {
+    color: green;
+}
+/* Custom 3-Column Grid Fix */
+.maths-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    text-align: center;
+}
+
+/* On desktop screens (medium and up), snap to 3 columns */
+@media (min-width: 987px) {
+    .maths-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+/* Simple utility card styling */
+.maths-card {
+    background-color: #ffffff;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+.spiral-container {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    /* CHANGE THIS: from 'flex-start' to 'stretch' */
+    align-items: stretch;
+}
+
+.spiral-container .maths-card {
+    flex: 1;
+    min-width: 300px;
+    /* ADD THIS: Ensures the inner content card stretches to fill the container height */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Responsive design: Stack them vertically if the screen is too narrow */
+@media (max-width: 768px) {
+    .spiral-container {
+        flex-direction: column;
+    }
+}

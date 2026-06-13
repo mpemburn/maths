@@ -1,0 +1,15 @@
+@use "styles";
+@import "tailwindcss" preflight;
+@plugin "@tailwindcss/forms";
+
+@source "./resources/views/**/*.blade.php";
+@source "./resources/js/**/*.js";
+@source "./app/Livewire/**/*.php";
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+
+@theme {
+    --color-brand-blue: #0055ff;
+    --font-display: "Helvetica Neue", sans-serif;
+}
