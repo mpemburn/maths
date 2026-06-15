@@ -42,9 +42,8 @@ canvas {
 #math {
     font-size: 1.5rem;
 }
-#canvas {
+#quadCanvas {
     width: 100%;
-    max-width: 500px;
     margin: 20px auto;
 }
 #xyCanvas {
@@ -55,15 +54,16 @@ canvas {
 .padded {
     padding-left: 3px;
 }
-.red-text, .a-value {
+.a-value, .red-text, .red-text::placeholder {
     color: red;
 }
-.blue-text, .b-value {
+.b-value, .blue-text, .blue-text::placeholder {
     color: blue;
 }
-.green-text, .c-value {
+.c-value, .green-text, .green-text::placeholder {
     color: green;
 }
+
 /* Custom 3-Column Grid Fix */
 .maths-grid {
     display: grid;

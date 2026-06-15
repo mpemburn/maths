@@ -8,7 +8,10 @@ new class extends Component {
 ?>
 
 <div>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    @assets
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        @vite(['resources/js/linechart.js', 'resources/js/euler.js', 'resources/js/quadratic.js']);
+    @endassets
     <div id="block">
         <h1>Quadratic Equation Solver</h1>
         <div>Enter a, b, and c values and click "GO"</div>
@@ -16,7 +19,7 @@ new class extends Component {
             <math>
                 <mi>y</mi>
                 <mo>=</mo>
-                <mi><input type="number" class="form-input red-text" id="a" placeholder="a"/></mi>
+                <mi><input type="number" class="form-input red-text" id="a_input" placeholder="a"/></mi>
                 <msup>
                     <mrow>
                         <mi class="padded">x</mi>
@@ -24,15 +27,17 @@ new class extends Component {
                     <mn>2</mn>
                 </msup>
                 <mo>+</mo>
-                <mi><input type="number" class="form-input blue-text" id="b" placeholder="b"/></mi>
+                <mi><input type="number" class="form-input blue-text" id="b_input" placeholder="b"/></mi>
                 <mi class="padded">x</mi>
                 <mo>+</mo>
-                <mi><input type="number" class="form-input green-text" id="c" placeholder="c"/></mi>
+                <mi><input type="number" class="form-input green-text" id="c_input" placeholder="c"/></mi>
                 mi>
             </math>
             <button id="go" class="form-input">GO</button>
         </div>
         <div id="error"></div>
+        <button id="euler" class="form-input">Euler</button>
+
         <div id="outputBlock">
             <div id="formulaBlock">
                 Formulae:
@@ -53,11 +58,11 @@ new class extends Component {
                 </div>
             </div>
             <div id="chartBlock" class="w-full max-w-6xl mx-auto p-6">
-                <canvas id="chart"></canvas>
+                <canvas id="quadCanvas"></canvas>
             </div>
         </div>
     </div>
 </div>
 @script
-@include('js.quadratic_js')
+
 @endscript
